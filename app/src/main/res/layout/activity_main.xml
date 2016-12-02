@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context="com.dalong.galleryrecycleview.MainActivity">
+
+    <TextView
+        android:id="@+id/position"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="28sp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/colorAccent"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.dalong.galleryrecycleview.GalleryRecyclerView
+        android:id="@+id/gallery"
+        android:layout_below="@+id/position"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height"
+        android:clipChildren="false"/>
+</RelativeLayout>
