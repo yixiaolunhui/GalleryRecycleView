@@ -1,4 +1,4 @@
-# 仿qq身边的人Viewpager实现
+# 仿qq身边的人recycleview实现
   高仿qq身边的人效果,本代码使用recycleView实现,之前使用viewpager和gallery实现过。链接如下：
   gallery实现链接为:https://github.com/dalong982242260/SlidingBall
   Viewpager实现链接为:https://github.com/dalong982242260/SlidingBallViewPager
