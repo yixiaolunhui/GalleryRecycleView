@@ -69,5 +69,13 @@ public class MainActivity extends AppCompatActivity {
                 mPosition.setText(mlist.get(position).getName());
             }
         });
+
+        mGalleryRecyclerView.setOnScrollListener(new OnRecyclerViewScrollListener(){
+            @Override
+            public void onLastItemVisible() {
+                super.onLastItemVisible();
+                Toast.makeText(MainActivity.this, "到最后拉", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
