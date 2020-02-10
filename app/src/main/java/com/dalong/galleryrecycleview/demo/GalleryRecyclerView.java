@@ -1,4 +1,4 @@
-package com.dalong.galleryrecycleview;
+package com.dalong.galleryrecycleview.demo;
 
 
 import android.content.Context;
@@ -178,6 +178,7 @@ public class GalleryRecyclerView extends RecyclerView {
      */
     public void setSelectPosition(int position){
         mLinearLayoutManager.scrollToPositionWithOffset(position,0);
+//        mLinearLayoutManager.setStackFromEnd(true);
     }
 
     /**

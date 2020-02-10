@@ -1,4 +1,4 @@
-package com.dalong.galleryrecycleview;
+package com.dalong.galleryrecycleview.demo;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;

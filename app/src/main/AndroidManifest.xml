@@ -9,8 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:screenOrientation="portrait"
-            android:name=".MainActivity">
+            android:name=".demo2.Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

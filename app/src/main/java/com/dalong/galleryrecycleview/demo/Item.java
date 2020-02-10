@@ -1,4 +1,4 @@
-package com.dalong.galleryrecycleview;
+package com.dalong.galleryrecycleview.demo;
 
 import java.io.Serializable;
 
