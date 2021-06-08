@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.dalong.galleryrecycleview.R;
 import com.dalong.galleryrecycleview.demo.Item;
 import com.yarolegovich.discretescrollview.DiscreteScrollView;
+import com.yarolegovich.discretescrollview.SelectType;
 import com.yarolegovich.discretescrollview.transform.ScaleTransformer;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -56,8 +57,9 @@ public class Main2Activity extends AppCompatActivity implements DiscreteScrollVi
         mGalleryRecyclerView.addOnItemChangedListener(this);
         mGalleryRecyclerView.addScrollStateChangeListener(this);
         mGalleryRecyclerView.setItemTransitionTimeMillis(150);
+        mGalleryRecyclerView.setSelectType(SelectType.LEFT);
         mGalleryRecyclerView.setItemTransformer(new ScaleTransformer.Builder()
-                .setMinScale(0.7f)
+                .setMinScale(0.8f)
                 .build());
 
         mPosition = (TextView) findViewById(R.id.position);

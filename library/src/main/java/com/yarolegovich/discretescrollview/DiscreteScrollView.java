@@ -108,16 +108,20 @@ public class DiscreteScrollView extends RecyclerView {
         layoutManager.setTimeForItemSettle(millis);
     }
 
-    public void setSlideOnFling(boolean result){
+    public void setSlideOnFling(boolean result) {
         layoutManager.setShouldSlideOnFling(result);
     }
 
-    public void setSlideOnFlingThreshold(int threshold){
+    public void setSlideOnFlingThreshold(int threshold) {
         layoutManager.setSlideOnFlingThreshold(threshold);
     }
 
     public void setOrientation(DSVOrientation orientation) {
         layoutManager.setOrientation(orientation);
+    }
+
+    public void setSelectType(SelectType type) {
+        layoutManager.setSelectType(type);
     }
 
     public void setOffscreenItems(int items) {
@@ -177,8 +181,8 @@ public class DiscreteScrollView extends RecyclerView {
                               ViewHolder currentHolder, ViewHolder newHolder) {
         for (ScrollStateChangeListener listener : scrollStateChangeListeners) {
             listener.onScroll(position, currentIndex, newIndex,
-                currentHolder,
-                newHolder);
+                    currentHolder,
+                    newHolder);
         }
     }
 
@@ -240,9 +244,9 @@ public class DiscreteScrollView extends RecyclerView {
             int newIndex = layoutManager.getNextPosition();
             if (currentIndex != newIndex) {
                 notifyScroll(currentViewPosition,
-                    currentIndex, newIndex,
-                    getViewHolder(currentIndex),
-                    getViewHolder(newIndex));
+                        currentIndex, newIndex,
+                        getViewHolder(currentIndex),
+                        getViewHolder(newIndex));
             }
         }
 

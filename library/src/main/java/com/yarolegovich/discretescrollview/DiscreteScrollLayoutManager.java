@@ -69,6 +69,8 @@ class DiscreteScrollLayoutManager extends RecyclerView.LayoutManager {
 
     private int viewWidth, viewHeight;
 
+    private SelectType selectType = SelectType.CENTER;
+
     @NonNull
     private final ScrollStateListener scrollStateListener;
     private DiscreteScrollItemTransformer itemTransformer;
@@ -164,16 +166,35 @@ class DiscreteScrollLayoutManager extends RecyclerView.LayoutManager {
 
     protected void updateRecyclerDimensions(RecyclerView.State state) {
         boolean dimensionsChanged = !state.isMeasuring()
-                && (recyclerViewProxy.getWidth()  != viewWidth
-                ||  recyclerViewProxy.getHeight() != viewHeight);
+                && (recyclerViewProxy.getWidth() != viewWidth
+                || recyclerViewProxy.getHeight() != viewHeight);
         if (dimensionsChanged) {
             viewWidth = recyclerViewProxy.getWidth();
             viewHeight = recyclerViewProxy.getHeight();
             recyclerViewProxy.removeAllViews();
         }
-        recyclerCenter.set(
-                recyclerViewProxy.getWidth() / 2,
-                recyclerViewProxy.getHeight() / 2);
+        if (selectType == SelectType.LEFT) {
+            recyclerCenter.set(
+                    childHalfWidth + dip2px(context, 10),
+                    recyclerViewProxy.getHeight() / 2);
+        } else if (selectType == SelectType.RIGHT) {
+            recyclerCenter.set(
+                    recyclerViewProxy.getWidth() - childHalfWidth - dip2px(context, 10),
+                    recyclerViewProxy.getHeight() / 2);
+        } else {
+            recyclerCenter.set(
+                    recyclerViewProxy.getWidth() / 2,
+                    recyclerViewProxy.getHeight() / 2);
+        }
+    }
+
+    public int dip2px(Context context, float dpValue) {
+        float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
+    }
+
+    public void setSelectType(SelectType type) {
+        this.selectType = type;
     }
 
     protected void fill(RecyclerView.Recycler recycler) {
